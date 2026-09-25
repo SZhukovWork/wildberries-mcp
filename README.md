@@ -8,6 +8,11 @@ history; seller legal details.
 
 **English** · [Русский](README.ru.md)
 
+> Buyer side: searches the public storefront, no Wildberries account or token
+> needed. Looking for your **seller cabinet** (orders, stocks, supplies via the
+> official Seller API)? That is a different tool —
+> [theYahia/wildberries-mcp](https://github.com/theYahia/wildberries-mcp).
+
 ## Why another Wildberries server
 
 Most WB scrapers quietly return data that is not what a buyer sees. This one

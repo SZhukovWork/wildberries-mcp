@@ -2,6 +2,11 @@
 
 [English](README.md) · **Русский**
 
+> Сервер для покупателя: работает с публичной витриной, аккаунт и токен
+> Wildberries не нужны. Если вам нужен **кабинет продавца** (заказы, остатки,
+> поставки через официальный Seller API) — это другой инструмент:
+> [theYahia/wildberries-mcp](https://github.com/theYahia/wildberries-mcp).
+
 [MCP](https://modelcontextprotocol.io)-сервер, который даёт LLM-агентам
 актуальные данные с [Wildberries](https://www.wildberries.ru) и честно
 подписывает, что это за данные. Есть поиск с настоящими страницами, сортировкой
