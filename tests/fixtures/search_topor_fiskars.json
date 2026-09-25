@@ -1,0 +1,502 @@
+{
+ "metadata": {
+  "catalog_type": "preset",
+  "catalog_value": "preset=200164742",
+  "normquery": "топор fiskars",
+  "search_result": {},
+  "name": "топор fiskars",
+  "rmi": "1",
+  "title": "топор fiskars",
+  "rs": 100,
+  "context": [
+   "comparison",
+   "ai_chat"
+  ],
+  "qv": "AQEFAQIAAS8QriiwP64dLy2qdqXiMfAupChlKwgwrbJGKvuu4a5FESqk-iz-qtYun6_JtMqup5zlreGdla1IrpOwIagmLdCxOLIaq4EthDA4H8uxSKw9rDAmpa3ZsSSvsSphLxKs_p7uKfst_K4TqcCmKquoMKiz-ypVqNOqTKzuqywoxqYbqocizylmLR2w7xT8rhQrgySYqX-b4K3FFXup8is8mHszMqNMHlqqXiSZLFostyzfLLQuXaJSoDEtcqbFrLCq6yjVJsmgLqeWLCCnLCiGrcetBjC_LBYvNBq_rHki6iynKgWqeyCtJjAkNiJ0rX8sDyBZLK0ow6dlLkQXTy1hL3U",
+  "kcl": "Mm/sq0QBOw82/hUfn9J/8/Z6Y4ircVzVmFkPVPE4fht1eaIqOnXsCBIPfvydS0Wd+sw",
+  "preset_normquery_map": {
+   "200164742": "топор fiskars"
+  }
+ },
+ "products": [
+  {
+   "id": 123723969,
+   "__sort": 380511,
+   "ksort": 0,
+   "root": 168401436,
+   "kindId": 0,
+   "brand": "FISKARS",
+   "brandId": 26276,
+   "siteBrandId": 0,
+   "colors": [
+    {
+     "name": "серый",
+     "id": 8421504
+    },
+    {
+     "name": "оранжевый",
+     "id": 16753920
+    },
+    {
+     "name": "черный",
+     "id": 0
+    }
+   ],
+   "subjectId": 1236,
+   "subjectParentId": 6946,
+   "semanticId": [
+    89,
+    75,
+    98,
+    116,
+    51,
+    814,
+    24
+   ],
+   "name": "Топор для дров туристический острый с чехлом Фискарс X10 S",
+   "entity": "",
+   "matchId": 1112869436,
+   "supplier": "Садовая техника и инструменты",
+   "supplierId": 55872,
+   "supplierRating": 4.8,
+   "supplierFlags": 12240,
+   "pics": 21,
+   "picsUpdate": 0,
+   "rating": 5,
+   "reviewRating": 4.9,
+   "feedbacks": 300,
+   "panelPromoId": 1056340,
+   "volume": 38,
+   "weight": 1.35,
+   "viewFlags": 135553240,
+   "mtype": 4097,
+   "sizes": [
+    {
+     "name": "",
+     "origName": "0",
+     "rank": 0,
+     "optionId": 217406521,
+     "wh": 4821063144,
+     "time1": 4,
+     "time2": 31,
+     "dtype": 6614249635848,
+     "ndtype": 197124,
+     "price": {
+      "basic": 1233000,
+      "product": 675800,
+      "logistics": 0,
+      "return": 0,
+      "cashback": 0,
+      "wallet": 0
+     },
+     "saleConditions": 134217792
+    }
+   ],
+   "totalQuantity": 46,
+   "time1": 4,
+   "time2": 31,
+   "wh": 4821063144,
+   "dtype": 6614249635848,
+   "ndtype": 197124,
+   "dtypeMask": 9,
+   "dist": 226
+  },
+  {
+   "id": 122249579,
+   "__sort": 376109,
+   "ksort": 0,
+   "root": 168401436,
+   "kindId": 0,
+   "brand": "FISKARS",
+   "brandId": 26276,
+   "siteBrandId": 0,
+   "colors": [
+    {
+     "name": "серый",
+     "id": 8421504
+    },
+    {
+     "name": "оранжевый",
+     "id": 16753920
+    },
+    {
+     "name": "черный",
+     "id": 0
+    }
+   ],
+   "subjectId": 1236,
+   "subjectParentId": 6946,
+   "semanticId": [
+    89,
+    75,
+    98,
+    116,
+    51,
+    814,
+    24
+   ],
+   "name": "Топор для дров туристический острый с чехлом Фискарс X7",
+   "entity": "",
+   "matchId": 43001,
+   "supplier": "Садовая техника и инструменты",
+   "supplierId": 55872,
+   "supplierRating": 4.8,
+   "supplierFlags": 12240,
+   "pics": 24,
+   "picsUpdate": 0,
+   "rating": 5,
+   "reviewRating": 4.9,
+   "feedbacks": 162,
+   "panelPromoId": 1056340,
+   "volume": 29,
+   "weight": 0.9,
+   "viewFlags": 135553112,
+   "mtype": 4097,
+   "sizes": [
+    {
+     "name": "",
+     "origName": "0",
+     "rank": 0,
+     "optionId": 215346006,
+     "wh": 119261,
+     "time1": 38,
+     "time2": 35,
+     "dtype": 6614249635841,
+     "ndtype": 197121,
+     "price": {
+      "basic": 1020200,
+      "product": 549500,
+      "logistics": 0,
+      "return": 0,
+      "cashback": 0,
+      "wallet": 0
+     },
+     "saleConditions": 134217792
+    }
+   ],
+   "totalQuantity": 46,
+   "time1": 38,
+   "time2": 35,
+   "wh": 119261,
+   "dtype": 6614249635841,
+   "ndtype": 197121,
+   "dtypeMask": 9,
+   "dist": 107
+  },
+  {
+   "id": 128718386,
+   "__sort": 326322,
+   "ksort": 0,
+   "root": 653534272,
+   "kindId": 0,
+   "brand": "FISKARS",
+   "brandId": 26276,
+   "siteBrandId": 0,
+   "colors": [
+    {
+     "name": "серый",
+     "id": 8421504
+    },
+    {
+     "name": "оранжевый",
+     "id": 16753920
+    },
+    {
+     "name": "черный",
+     "id": 0
+    }
+   ],
+   "subjectId": 6955,
+   "subjectParentId": 6946,
+   "semanticId": [
+    89,
+    75,
+    98,
+    116,
+    51,
+    962,
+    14
+   ],
+   "name": "Топор колун для колки дров большой 2,4 кг Фискарс",
+   "entity": "",
+   "matchId": 388271130,
+   "supplier": "Садовая техника и инструменты",
+   "supplierId": 55872,
+   "supplierRating": 4.8,
+   "supplierFlags": 12240,
+   "pics": 24,
+   "picsUpdate": 0,
+   "rating": 5,
+   "reviewRating": 5,
+   "feedbacks": 142,
+   "panelPromoId": 1056340,
+   "volume": 94,
+   "weight": 2.54,
+   "viewFlags": 135786712,
+   "sizes": [
+    {
+     "name": "",
+     "origName": "0",
+     "rank": 0,
+     "optionId": 223686245,
+     "wh": 119261,
+     "time1": 38,
+     "time2": 35,
+     "dtype": 6614249635841,
+     "ndtype": 197121,
+     "price": {
+      "basic": 1908300,
+      "product": 1046000,
+      "logistics": 0,
+      "return": 0,
+      "cashback": 0,
+      "wallet": 0
+     },
+     "saleConditions": 134217792
+    }
+   ],
+   "totalQuantity": 46,
+   "time1": 38,
+   "time2": 35,
+   "wh": 119261,
+   "dtype": 6614249635841,
+   "ndtype": 197121,
+   "dtypeMask": 9,
+   "dist": 107
+  },
+  {
+   "id": 146492717,
+   "__sort": 319728,
+   "ksort": 0,
+   "root": 77125599,
+   "kindId": 0,
+   "brand": "FISKARS",
+   "brandId": 26276,
+   "siteBrandId": 0,
+   "colors": [
+    {
+     "name": "оранжевый",
+     "id": 16753920
+    },
+    {
+     "name": "черный",
+     "id": 0
+    }
+   ],
+   "subjectId": 1236,
+   "subjectParentId": 6946,
+   "semanticId": [
+    89,
+    75,
+    98,
+    116,
+    51,
+    814,
+    24
+   ],
+   "name": "Топор для рубки дров универсальный Фискарс X10 S 1015619",
+   "entity": "",
+   "matchId": 44009,
+   "supplier": "7745 Глобал Россия",
+   "supplierId": 264264,
+   "supplierRating": 4.8,
+   "supplierFlags": 12240,
+   "pics": 19,
+   "picsUpdate": 0,
+   "rating": 5,
+   "reviewRating": 4.9,
+   "feedbacks": 162,
+   "panelPromoId": 1056340,
+   "volume": 26,
+   "weight": 1.37,
+   "viewFlags": 135688408,
+   "mtype": 4097,
+   "sizes": [
+    {
+     "name": "",
+     "origName": "0",
+     "rank": 0,
+     "optionId": 246573393,
+     "wh": 211730,
+     "time1": 27,
+     "time2": 36,
+     "dtype": 6614249635841,
+     "ndtype": 197121,
+     "price": {
+      "basic": 1211900,
+      "product": 675800,
+      "logistics": 0,
+      "return": 0,
+      "cashback": 0,
+      "wallet": 0
+     },
+     "saleConditions": 134217728
+    }
+   ],
+   "totalQuantity": 46,
+   "time1": 27,
+   "time2": 36,
+   "wh": 211730,
+   "dtype": 6614249635841,
+   "ndtype": 197121,
+   "dtypeMask": 9,
+   "dist": 85
+  },
+  {
+   "id": 841670332,
+   "__sort": 127236,
+   "ksort": 0,
+   "root": 820287908,
+   "kindId": 0,
+   "brand": "FISKARS",
+   "brandId": 26276,
+   "siteBrandId": 0,
+   "colors": [
+    {
+     "name": "оранжевый",
+     "id": 16753920
+    },
+    {
+     "name": "черный",
+     "id": 0
+    }
+   ],
+   "subjectId": 1236,
+   "subjectParentId": 6946,
+   "semanticId": [
+    89,
+    75,
+    98,
+    116,
+    51,
+    10,
+    32
+   ],
+   "name": "Универсальный топор X7 XS 1015618",
+   "entity": "",
+   "matchId": 43001,
+   "supplier": "НЕОТЕХ",
+   "supplierId": 200686,
+   "supplierRating": 4.8,
+   "supplierFlags": 12224,
+   "pics": 12,
+   "picsUpdate": 0,
+   "rating": 5,
+   "reviewRating": 5,
+   "feedbacks": 6,
+   "panelPromoId": 1056340,
+   "volume": 28,
+   "weight": 0.8,
+   "viewFlags": 1335360,
+   "sizes": [
+    {
+     "name": "",
+     "origName": "0",
+     "rank": 0,
+     "optionId": 1263995536,
+     "wh": 371889,
+     "time1": 14,
+     "time2": 42,
+     "dtype": 6614249635841,
+     "ndtype": 197121,
+     "price": {
+      "basic": 1090000,
+      "product": 444200,
+      "logistics": 0,
+      "return": 0,
+      "cashback": 0,
+      "wallet": 0
+     },
+     "saleConditions": 134217728
+    }
+   ],
+   "totalQuantity": 5,
+   "time1": 14,
+   "time2": 42,
+   "wh": 371889,
+   "dtype": 6614249635841,
+   "ndtype": 197121,
+   "dtypeMask": 1,
+   "dist": 89
+  },
+  {
+   "id": 317480857,
+   "__sort": 100711,
+   "ksort": 0,
+   "root": 298983383,
+   "kindId": 0,
+   "brand": "FISKARS",
+   "brandId": 26276,
+   "siteBrandId": 0,
+   "colors": [
+    {
+     "name": "оранжевый",
+     "id": 16753920
+    },
+    {
+     "name": "черный",
+     "id": 0
+    }
+   ],
+   "subjectId": 1236,
+   "subjectParentId": 6946,
+   "semanticId": [
+    89,
+    75,
+    98,
+    116,
+    51,
+    814,
+    24
+   ],
+   "name": "Топор для рубки дров универсальный Фискарс X7 XS 1015618",
+   "entity": "",
+   "matchId": 43001,
+   "supplier": "URZUS & KEIZEN Официальный магазин",
+   "supplierId": 250000129,
+   "supplierRating": 4.8,
+   "supplierFlags": 12224,
+   "pics": 19,
+   "picsUpdate": 0,
+   "rating": 5,
+   "reviewRating": 5,
+   "feedbacks": 1,
+   "panelPromoId": 1056340,
+   "volume": 29,
+   "weight": 0.85,
+   "viewFlags": 1335320,
+   "mtype": 4097,
+   "sizes": [
+    {
+     "name": "",
+     "origName": "0",
+     "rank": 0,
+     "optionId": 478597169,
+     "wh": 5384420167,
+     "time1": 3,
+     "time2": 27,
+     "dtype": 6614249635848,
+     "ndtype": 197124,
+     "price": {
+      "basic": 945200,
+      "product": 549500,
+      "logistics": 0,
+      "return": 0,
+      "cashback": 0,
+      "wallet": 0
+     },
+     "saleConditions": 134217728
+    }
+   ],
+   "totalQuantity": 46,
+   "time1": 3,
+   "time2": 27,
+   "wh": 5384420167,
+   "dtype": 6614249635848,
+   "ndtype": 197124,
+   "dtypeMask": 9,
+   "dist": 212
+  }
+ ],
+ "total": 912
+}

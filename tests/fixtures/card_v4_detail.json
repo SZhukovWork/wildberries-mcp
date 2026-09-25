@@ -1,0 +1,241 @@
+{
+ "products": [
+  {
+   "id": 498414394,
+   "root": 296051189,
+   "kindId": 0,
+   "brand": "FISKARS",
+   "brandId": 26276,
+   "siteBrandId": 0,
+   "colors": [
+    {
+     "name": "оранжевый",
+     "id": 16753920
+    }
+   ],
+   "subjectId": 1236,
+   "subjectParentId": 6946,
+   "name": "Топор универсальный X24 1069104",
+   "entity": "",
+   "matchId": 364221051,
+   "supplier": "Winsell",
+   "supplierId": 4056581,
+   "supplierRating": 4.9,
+   "supplierFlags": 2304,
+   "pics": 5,
+   "picsUpdate": 0,
+   "rating": 5,
+   "reviewRating": 5,
+   "feedbacks": 14,
+   "volume": 62,
+   "weight": 1.7,
+   "viewFlags": 1695880,
+   "promotions": [
+    1005085,
+    1006716,
+    1016713,
+    1023915,
+    1029288,
+    1039810,
+    1056991
+   ],
+   "sizes": [
+    {
+     "name": "",
+     "origName": "0",
+     "rank": 0,
+     "optionId": 692867427,
+     "stocks": [
+      {
+       "wh": 50160365,
+       "dtype": 2216203124737,
+       "ndtype": 66049,
+       "dist": 792,
+       "qty": 19,
+       "priority": 54328,
+       "time1": 13,
+       "time2": 79
+      }
+     ],
+     "time1": 13,
+     "time2": 79,
+     "wh": 50160365,
+     "dtype": 2216203124737,
+     "ndtype": 66049,
+     "dist": 792,
+     "price": {
+      "basic": 1226900,
+      "product": 918700,
+      "logistics": 0,
+      "return": 0,
+      "cashback": 0,
+      "wallet": 0
+     },
+     "saleConditions": 134217728
+    }
+   ],
+   "totalQuantity": 19,
+   "time1": 13,
+   "time2": 79,
+   "wh": 50160365,
+   "dtype": 2216203124737,
+   "ndtype": 66049,
+   "dist": 792
+  },
+  {
+   "id": 141304983,
+   "root": 120525765,
+   "kindId": 0,
+   "brand": "ELM327 ScanBox",
+   "brandId": 277848,
+   "siteBrandId": 0,
+   "colors": [],
+   "subjectId": 4210,
+   "subjectParentId": 8891,
+   "name": "Адаптер Vgate vLinker MC Bluetooth 3.0",
+   "entity": "",
+   "matchId": 141722785,
+   "supplier": "ELM327 ScanBox",
+   "supplierId": 193875,
+   "supplierRating": 4.6,
+   "supplierFlags": 12224,
+   "pics": 5,
+   "picsUpdate": 0,
+   "rating": 5,
+   "reviewRating": 4.9,
+   "feedbacks": 32,
+   "volume": 5,
+   "weight": 0.441,
+   "viewFlags": 548864,
+   "promotions": [
+    1006716,
+    1013976,
+    1017351,
+    1052231,
+    1056991
+   ],
+   "sizes": [
+    {
+     "name": "",
+     "origName": "0",
+     "rank": 0,
+     "optionId": 239378786,
+     "stocks": [
+      {
+       "wh": 50153523,
+       "dtype": 6614249635841,
+       "ndtype": 197121,
+       "dist": 651,
+       "qty": 7,
+       "priority": 58543,
+       "time1": 16,
+       "time2": 60
+      }
+     ],
+     "time1": 16,
+     "time2": 60,
+     "wh": 50153523,
+     "dtype": 6614249635841,
+     "ndtype": 197121,
+     "dist": 651,
+     "price": {
+      "basic": 780000,
+      "product": 504600,
+      "logistics": 0,
+      "return": 0,
+      "cashback": 0,
+      "wallet": 0
+     },
+     "saleConditions": 134217728
+    }
+   ],
+   "totalQuantity": 8,
+   "time1": 16,
+   "time2": 60,
+   "wh": 50153523,
+   "dtype": 6614249635841,
+   "ndtype": 197121,
+   "dist": 651
+  },
+  {
+   "id": 978751317,
+   "root": 1637541390,
+   "kindId": 0,
+   "brand": "",
+   "brandId": 0,
+   "siteBrandId": 0,
+   "colors": [
+    {
+     "name": "желтый",
+     "id": 16776960
+    }
+   ],
+   "subjectId": 2421,
+   "subjectParentId": 6943,
+   "name": "Свеча окопная блиндажная набор 3 шт, 380 мл, горение 4 часа",
+   "entity": "",
+   "matchId": 0,
+   "supplier": "Клякса Kids",
+   "supplierId": 1322677,
+   "supplierRating": 4.9,
+   "supplierFlags": 12224,
+   "pics": 8,
+   "picsUpdate": 0,
+   "rating": 5,
+   "reviewRating": 4.6,
+   "feedbacks": 9,
+   "volume": 14,
+   "weight": 0.6,
+   "viewFlags": 1581056,
+   "promotions": [
+    1008386,
+    1023420,
+    1029288,
+    1053940,
+    1056991
+   ],
+   "sizes": [
+    {
+     "name": "",
+     "origName": "0",
+     "rank": 0,
+     "optionId": 1465909194,
+     "stocks": [
+      {
+       "wh": 212032,
+       "dtype": 6614249635841,
+       "ndtype": 197121,
+       "dist": 26,
+       "qty": 46,
+       "priority": 85603,
+       "time1": 6,
+       "time2": 32
+      }
+     ],
+     "time1": 6,
+     "time2": 32,
+     "wh": 212032,
+     "dtype": 6614249635841,
+     "ndtype": 197121,
+     "dist": 26,
+     "price": {
+      "basic": 88500,
+      "product": 49800,
+      "logistics": 0,
+      "return": 0,
+      "cashback": 0,
+      "wallet": 0
+     },
+     "saleConditions": 134217728
+    }
+   ],
+   "totalQuantity": 46,
+   "time1": 6,
+   "time2": 32,
+   "wh": 212032,
+   "dtype": 6614249635841,
+   "ndtype": 197121,
+   "dist": 26
+  }
+ ]
+}

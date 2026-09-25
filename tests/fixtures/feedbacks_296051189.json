@@ -1,0 +1,1111 @@
+{
+ "valuation": "4.9",
+ "valuationSum": 3344,
+ "valuationDistribution": {
+  "1": 3,
+  "2": 4,
+  "3": 2,
+  "4": 13,
+  "5": 655
+ },
+ "valuationDistributionPercent": {
+  "1": 0,
+  "2": 1,
+  "3": 0,
+  "4": 2,
+  "5": 97
+ },
+ "nmValuationDistribution": [
+  {
+   "nm": 217083666,
+   "valuationDistribution": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 4,
+    "5": 59
+   },
+   "valuationDistributionPercent": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 6,
+    "5": 94
+   }
+  },
+  {
+   "nm": 217092700,
+   "valuationDistribution": {
+    "1": 2,
+    "2": 3,
+    "3": 0,
+    "4": 3,
+    "5": 135
+   },
+   "valuationDistributionPercent": {
+    "1": 1,
+    "2": 2,
+    "3": 0,
+    "4": 2,
+    "5": 95
+   }
+  },
+  {
+   "nm": 217103915,
+   "valuationDistribution": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 1,
+    "5": 29
+   },
+   "valuationDistributionPercent": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 3,
+    "5": 97
+   }
+  },
+  {
+   "nm": 217144572,
+   "valuationDistribution": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 3,
+    "5": 164
+   },
+   "valuationDistributionPercent": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 2,
+    "5": 98
+   }
+  },
+  {
+   "nm": 218846319,
+   "valuationDistribution": {
+    "1": 1,
+    "2": 1,
+    "3": 0,
+    "4": 1,
+    "5": 31
+   },
+   "valuationDistributionPercent": {
+    "1": 3,
+    "2": 3,
+    "3": 0,
+    "4": 3,
+    "5": 91
+   }
+  },
+  {
+   "nm": 221682490,
+   "valuationDistribution": {
+    "1": 0,
+    "2": 0,
+    "3": 1,
+    "4": 0,
+    "5": 89
+   },
+   "valuationDistributionPercent": {
+    "1": 0,
+    "2": 0,
+    "3": 1,
+    "4": 0,
+    "5": 99
+   }
+  },
+  {
+   "nm": 233682393,
+   "valuationDistribution": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 1,
+    "5": 24
+   },
+   "valuationDistributionPercent": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 4,
+    "5": 96
+   }
+  },
+  {
+   "nm": 233699175,
+   "valuationDistribution": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 13
+   },
+   "valuationDistributionPercent": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 100
+   }
+  },
+  {
+   "nm": 314753085,
+   "valuationDistribution": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 11
+   },
+   "valuationDistributionPercent": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 100
+   }
+  },
+  {
+   "nm": 314753533,
+   "valuationDistribution": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 5
+   },
+   "valuationDistributionPercent": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 100
+   }
+  },
+  {
+   "nm": 314754381,
+   "valuationDistribution": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 41
+   },
+   "valuationDistributionPercent": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 100
+   }
+  },
+  {
+   "nm": 498150872,
+   "valuationDistribution": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 11
+   },
+   "valuationDistributionPercent": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 100
+   }
+  },
+  {
+   "nm": 498166149,
+   "valuationDistribution": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 13
+   },
+   "valuationDistributionPercent": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 100
+   }
+  },
+  {
+   "nm": 498343934,
+   "valuationDistribution": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 5
+   },
+   "valuationDistributionPercent": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 100
+   }
+  },
+  {
+   "nm": 498392605,
+   "valuationDistribution": {
+    "1": 0,
+    "2": 0,
+    "3": 1,
+    "4": 0,
+    "5": 11
+   },
+   "valuationDistributionPercent": {
+    "1": 0,
+    "2": 0,
+    "3": 8,
+    "4": 0,
+    "5": 92
+   }
+  },
+  {
+   "nm": 498414394,
+   "valuationDistribution": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 14
+   },
+   "valuationDistributionPercent": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 100
+   }
+  }
+ ],
+ "matchingSizePercentages": null,
+ "nmMatchingSizePercentages": null,
+ "feedbackCount": 678,
+ "feedbackCountWithPhoto": 38,
+ "feedbackCountWithText": 254,
+ "feedbackCountWithVideo": 3,
+ "feedbacks": [
+  {
+   "id": "hFb9QIS177HyqvJsHDEb",
+   "globalUserId": "1",
+   "wbUserId": 1,
+   "wbUserDetails": {
+    "name": "Покупатель 1",
+    "country": "ru",
+    "hasPhoto": false
+   },
+   "nmId": 498414394,
+   "text": "",
+   "pros": "",
+   "cons": "",
+   "matchingSize": "",
+   "matchingPhoto": "",
+   "matchingDescription": "",
+   "productValuation": 5,
+   "color": "Оранжевый · 1.6 кг",
+   "size": "0",
+   "createdDate": "2026-08-10T06:54:56Z",
+   "updatedDate": "2026-08-10T06:56:16.271005772Z",
+   "answer": null,
+   "video": null,
+   "votes": {
+    "pluses": 0,
+    "minuses": 0
+   },
+   "rank": 249.0,
+   "statusId": 16,
+   "bables": [
+    "качество",
+    "простая сборка",
+    "высокая мощность",
+    "вес",
+    "удобно пользоваться"
+   ],
+   "reasons": {
+    "good": [
+     10066,
+     10078,
+     10082,
+     10087,
+     10089
+    ],
+    "bad": []
+   },
+   "excludedFromRating": {
+    "isExcluded": false,
+    "reasons": []
+   }
+  },
+  {
+   "id": "3o2L1DhKClTxURdk8dAL",
+   "globalUserId": "2",
+   "wbUserId": 2,
+   "wbUserDetails": {
+    "name": "Покупатель 2",
+    "country": "ru",
+    "hasPhoto": false
+   },
+   "nmId": 498414394,
+   "text": "отличный топор но выбрал x17 m",
+   "pros": "",
+   "cons": "",
+   "matchingSize": "",
+   "matchingPhoto": "",
+   "matchingDescription": "",
+   "productValuation": 5,
+   "color": "Оранжевый · 1.6 кг",
+   "size": "0",
+   "createdDate": "2026-06-13T15:49:30Z",
+   "updatedDate": "2026-06-13T19:33:46.052724913Z",
+   "answer": {
+    "text": "Здравствуйте. Благодарим Вас за отзыв и за высокую оценку. Нам очень приятно, что Вам понравился топор x24 Fiskars, и Вы остались довольны качеством товара. Приятных покупок.",
+    "state": "wbRu",
+    "lastUpdate": null,
+    "createDate": "2026-06-13T19:33:08Z",
+    "rejectReason": null,
+    "metadata": {
+     "editText": "",
+     "editRejectReason": 0
+    }
+   },
+   "video": null,
+   "votes": {
+    "pluses": 0,
+    "minuses": 0
+   },
+   "rank": 228.0,
+   "statusId": 14,
+   "reasons": {
+    "good": [],
+    "bad": []
+   },
+   "parentFeedbackId": "ukzPZbKBFK3ITyIajoMF",
+   "excludedFromRating": {
+    "isExcluded": false,
+    "reasons": []
+   }
+  },
+  {
+   "id": "ukzPZbKBFK3ITyIajoMF",
+   "globalUserId": "3",
+   "wbUserId": 3,
+   "wbUserDetails": {
+    "name": "Покупатель 3",
+    "country": "ru",
+    "hasPhoto": false
+   },
+   "nmId": 498414394,
+   "text": "не ожидал.приятный топор.первый раз брал.благодарю",
+   "pros": "все отлично",
+   "cons": "",
+   "matchingSize": "",
+   "matchingPhoto": "",
+   "matchingDescription": "",
+   "productValuation": 5,
+   "color": "Оранжевый · 1.6 кг",
+   "size": "0",
+   "createdDate": "2026-06-12T05:27:27Z",
+   "updatedDate": "2026-06-13T19:33:46.052724913Z",
+   "answer": {
+    "text": "Здравствуйте. Благодарим Вас за заказ, за отзыв с фото и за высокую оценку. Нам очень приятно, что Вам понравился топор X24 Fiskars, и Вы остались довольны качеством товара. Желаем Вам только приятных впечатлений от покупки.",
+    "state": "wbRu",
+    "lastUpdate": null,
+    "createDate": "2026-06-13T12:44:19Z",
+    "rejectReason": null,
+    "metadata": {
+     "editText": "",
+     "editRejectReason": 0
+    }
+   },
+   "photos": [
+    {
+     "id": 437264663,
+     "key": "1/c1968ddc-9f18-4bf7-9c0f-7d7822f150f7",
+     "isBlurred": false,
+     "isReady": true
+    }
+   ],
+   "photo": [
+    437264663
+   ],
+   "video": null,
+   "votes": {
+    "pluses": 0,
+    "minuses": 0
+   },
+   "rank": 227.0,
+   "statusId": 14,
+   "reasons": {
+    "good": [],
+    "bad": []
+   },
+   "childFeedbackId": "3o2L1DhKClTxURdk8dAL",
+   "excludedFromRating": {
+    "isExcluded": true,
+    "reasons": [
+     "hasIncludedChild"
+    ]
+   }
+  },
+  {
+   "id": "vKoYVREVvYwgI4f57QTA",
+   "globalUserId": "4",
+   "wbUserId": 4,
+   "wbUserDetails": {
+    "name": "Покупатель 4",
+    "country": "ru",
+    "hasPhoto": false
+   },
+   "nmId": 498414394,
+   "text": "",
+   "pros": "Топор  просто  огонь ! Спасибо продавцу !",
+   "cons": "",
+   "matchingSize": "",
+   "matchingPhoto": "",
+   "matchingDescription": "",
+   "productValuation": 5,
+   "color": "Оранжевый · 1.6 кг",
+   "size": "0",
+   "createdDate": "2026-02-01T11:08:52Z",
+   "updatedDate": "2026-02-12T13:35:46.793816314Z",
+   "answer": {
+    "text": "Елена, здравствуйте. Благодарим Вас за заказ, за отзыв и за высокую оценку. Нам очень приятно, что Вам понравился топор Fiskars, и Вы остались довольны качеством товара. Желаем Вам только приятных впечатлений от покупки.",
+    "state": "wbRu",
+    "lastUpdate": null,
+    "createDate": "2026-02-12T13:34:37Z",
+    "rejectReason": null,
+    "metadata": {
+     "editText": "",
+     "editRejectReason": 0
+    }
+   },
+   "video": null,
+   "votes": {
+    "pluses": 0,
+    "minuses": 0
+   },
+   "rank": 199.0,
+   "statusId": 16,
+   "reasons": {
+    "good": [],
+    "bad": []
+   },
+   "excludedFromRating": {
+    "isExcluded": false,
+    "reasons": []
+   }
+  },
+  {
+   "id": "1cukg9n2bKlT23WUoblI",
+   "globalUserId": "5",
+   "wbUserId": 5,
+   "wbUserDetails": {
+    "name": "Покупатель 5",
+    "country": "ru",
+    "hasPhoto": false
+   },
+   "nmId": 498414394,
+   "text": "Работать одно УДОВОЛЬСТВИЕ!!!СУПЕР!",
+   "pros": "ОТЛИЧНЫЙ ТОВАР!",
+   "cons": "",
+   "matchingSize": "",
+   "matchingPhoto": "",
+   "matchingDescription": "",
+   "productValuation": 5,
+   "color": "оранжевый",
+   "size": "0",
+   "createdDate": "2025-12-13T14:01:59Z",
+   "updatedDate": "2025-12-13T15:05:52Z",
+   "answer": {
+    "text": "Павел, здравствуйте. Благодарим Вас за заказ, за отзыв и за высокую оценку. Нам очень приятно, что Вам понравился топор x24 Fiskars, и Вы остались довольны качеством товара. Желаем Вам только приятных впечатлений от покупки.",
+    "state": "wbRu",
+    "lastUpdate": "0001-01-01T00:00:00Z",
+    "createDate": "2025-12-13T15:04:22Z",
+    "rejectReason": 0,
+    "metadata": null,
+    "supplierId": 4056581,
+    "employeeId": 0,
+    "editable": false
+   },
+   "video": null,
+   "votes": {
+    "pluses": 0,
+    "minuses": 0
+   },
+   "rank": 185.0,
+   "statusId": 16,
+   "reasons": {
+    "good": [],
+    "bad": []
+   },
+   "excludedFromRating": {
+    "isExcluded": false,
+    "reasons": []
+   }
+  },
+  {
+   "id": "EXf5uVdEWDYCDjuwyaF0",
+   "globalUserId": "6",
+   "wbUserId": 6,
+   "wbUserDetails": {
+    "name": "Покупатель 6",
+    "country": "ru",
+    "hasPhoto": false
+   },
+   "nmId": 498414394,
+   "text": "",
+   "pros": "Отличный топор. Со своей задачей справляется гораздо лучше, чем классический.",
+   "cons": "",
+   "matchingSize": "",
+   "matchingPhoto": "",
+   "matchingDescription": "",
+   "productValuation": 5,
+   "color": "оранжевый",
+   "size": "0",
+   "createdDate": "2025-09-24T15:37:30Z",
+   "updatedDate": "2025-09-25T12:19:54Z",
+   "answer": {
+    "text": "Олег , здравствуйте. Благодарим Вас за заказ, за отзыв и за высокую оценку. Нам очень приятно, что Вам понравился топор X24 Fiskars, и Вы остались довольны качеством товара. Желаем Вам только приятных впечатлений от покупки.",
+    "state": "wbRu",
+    "lastUpdate": "0001-01-01T00:00:00Z",
+    "createDate": "2025-09-25T12:18:50Z",
+    "rejectReason": 0,
+    "metadata": null,
+    "supplierId": 4056581,
+    "editable": false,
+    "employeeId": 0
+   },
+   "video": null,
+   "votes": {
+    "pluses": 0,
+    "minuses": 0
+   },
+   "rank": 138.0,
+   "statusId": 16,
+   "reasons": {
+    "good": [],
+    "bad": []
+   },
+   "excludedFromRating": {
+    "isExcluded": false,
+    "reasons": []
+   }
+  },
+  {
+   "id": "bB5IRd2FBNIdR2wTXJ9g",
+   "globalUserId": "7",
+   "wbUserId": 7,
+   "wbUserDetails": {
+    "name": "Покупатель 7",
+    "country": "ru",
+    "hasPhoto": false
+   },
+   "nmId": 221682490,
+   "text": "Колю сама очень хорошо рвёт чурки.",
+   "pros": "",
+   "cons": "",
+   "matchingSize": "",
+   "matchingPhoto": "",
+   "matchingDescription": "",
+   "productValuation": 5,
+   "color": "Черный, оранжевый · 2.5 кг",
+   "size": "0",
+   "createdDate": "2026-09-20T03:25:17Z",
+   "updatedDate": "2026-09-20T03:28:29.797900345Z",
+   "answer": null,
+   "video": null,
+   "votes": {
+    "pluses": 0,
+    "minuses": 0
+   },
+   "rank": 261.0,
+   "statusId": 16,
+   "bables": [
+    "качество",
+    "вес",
+    "удобно пользоваться"
+   ],
+   "reasons": {
+    "good": [
+     10066,
+     10087,
+     10089
+    ],
+    "bad": []
+   },
+   "excludedFromRating": {
+    "isExcluded": false,
+    "reasons": []
+   },
+   "tags": [
+    {
+     "id": 4,
+     "status": "plus"
+    }
+   ]
+  },
+  {
+   "id": "sIQxVU2S1OkVmnFnT5wm",
+   "globalUserId": "8",
+   "wbUserId": 8,
+   "wbUserDetails": {
+    "name": "Покупатель 8",
+    "country": "ru",
+    "hasPhoto": false
+   },
+   "nmId": 498150872,
+   "text": "Колун-\"ОГОНЬ\".Дороговат конечно, но он того стоит!",
+   "pros": "",
+   "cons": "",
+   "matchingSize": "",
+   "matchingPhoto": "",
+   "matchingDescription": "",
+   "productValuation": 5,
+   "color": "Оранжевый · 1.8 кг",
+   "size": "0",
+   "createdDate": "2026-09-20T01:27:49Z",
+   "updatedDate": "2026-09-20T01:29:15.119425976Z",
+   "answer": null,
+   "video": null,
+   "votes": {
+    "pluses": 0,
+    "minuses": 0
+   },
+   "rank": 260.0,
+   "statusId": 16,
+   "reasons": {
+    "good": [],
+    "bad": []
+   },
+   "excludedFromRating": {
+    "isExcluded": false,
+    "reasons": []
+   }
+  },
+  {
+   "id": "VGYkfgnbsHxt4aHQFSvl",
+   "globalUserId": "9",
+   "wbUserId": 9,
+   "wbUserDetails": {
+    "name": "Покупатель 9",
+    "country": "ru",
+    "hasPhoto": false
+   },
+   "nmId": 217092700,
+   "text": "Супер",
+   "pros": "",
+   "cons": "",
+   "matchingSize": "",
+   "matchingPhoto": "",
+   "matchingDescription": "",
+   "productValuation": 5,
+   "color": "1 кг",
+   "size": "0",
+   "createdDate": "2026-09-19T09:47:50Z",
+   "updatedDate": "2026-09-19T09:49:06.837054989Z",
+   "answer": null,
+   "video": null,
+   "votes": {
+    "pluses": 0,
+    "minuses": 0
+   },
+   "rank": 259.0,
+   "statusId": 16,
+   "reasons": {
+    "good": [],
+    "bad": []
+   },
+   "excludedFromRating": {
+    "isExcluded": false,
+    "reasons": []
+   }
+  },
+  {
+   "id": "Ca58FCxV076YiygxIIAO",
+   "globalUserId": "10",
+   "wbUserId": 10,
+   "wbUserDetails": {
+    "name": "Покупатель 10",
+    "country": "ru",
+    "hasPhoto": false
+   },
+   "nmId": 498150872,
+   "text": "Это лучший! Качество на высоте. Оригинал",
+   "pros": "",
+   "cons": "",
+   "matchingSize": "",
+   "matchingPhoto": "",
+   "matchingDescription": "",
+   "productValuation": 5,
+   "color": "Оранжевый · 1.8 кг",
+   "size": "0",
+   "createdDate": "2026-09-10T21:07:20Z",
+   "updatedDate": "2026-09-11T02:15:36.133291884Z",
+   "answer": null,
+   "video": null,
+   "votes": {
+    "pluses": 0,
+    "minuses": 0
+   },
+   "rank": 258.0,
+   "statusId": 16,
+   "bables": [
+    "качество",
+    "удобно пользоваться"
+   ],
+   "reasons": {
+    "good": [
+     10066,
+     10089
+    ],
+    "bad": []
+   },
+   "excludedFromRating": {
+    "isExcluded": false,
+    "reasons": []
+   },
+   "tags": [
+    {
+     "id": 8,
+     "status": "plus"
+    }
+   ]
+  },
+  {
+   "id": "6bzH1dE6RGDdjjKRiksF",
+   "globalUserId": "15",
+   "wbUserId": 15,
+   "wbUserDetails": {
+    "name": "Покупатель 15",
+    "country": "ru",
+    "hasPhoto": false
+   },
+   "nmId": 217144572,
+   "text": "Тапор проста супер советую не пожалеити",
+   "pros": "",
+   "cons": "",
+   "matchingSize": "",
+   "matchingPhoto": "",
+   "matchingDescription": "",
+   "productValuation": 5,
+   "color": "1.6 кг",
+   "size": "0",
+   "createdDate": "2026-09-07T06:58:07Z",
+   "updatedDate": "2026-09-09T09:35:39.072193408Z",
+   "answer": {
+    "text": "Здравствуйте. Благодарим Вас за заказ, за отзыв и за высокую оценку. Нам очень приятно, что Вам понравился топор X17 Fiskars, и Вы остались довольны качеством товара. Желаем Вам только приятных впечатлений от покупки.",
+    "state": "wbRu",
+    "lastUpdate": null,
+    "createDate": "2026-09-09T09:35:15Z",
+    "rejectReason": null,
+    "metadata": {
+     "editText": "",
+     "editRejectReason": 0
+    }
+   },
+   "video": null,
+   "votes": {
+    "pluses": 0,
+    "minuses": 0
+   },
+   "rank": 256.0,
+   "statusId": 16,
+   "reasons": {
+    "good": [],
+    "bad": []
+   },
+   "excludedFromRating": {
+    "isExcluded": false,
+    "reasons": []
+   }
+  },
+  {
+   "id": "dxSIda9p1hgBLRMd1jbK",
+   "globalUserId": "16",
+   "wbUserId": 16,
+   "wbUserDetails": {
+    "name": "Покупатель 16",
+    "country": "ru",
+    "hasPhoto": false
+   },
+   "nmId": 233682393,
+   "text": "Скорее всего оригинал. Оригинальнее только в Финляндии, судя по всему. \nСталь слабовата, зазубрины от сучковатой березы. В землю вообще втыкать нельзя - сразу режущую кромку срезает. \nНо лучше, чем советские колуны, по крайней мере наши пока не научились делать качественные легкие колуны.",
+   "pros": "",
+   "cons": "",
+   "matchingSize": "",
+   "matchingPhoto": "",
+   "matchingDescription": "",
+   "productValuation": 5,
+   "color": "",
+   "size": "0",
+   "createdDate": "2026-09-01T23:58:39Z",
+   "updatedDate": "2026-09-09T09:36:36.448227588Z",
+   "answer": {
+    "text": "Здравствуйте. Благодарим Вас за заказ, за отзыв и за высокую оценку. Нам очень приятно, что Вам понравился топор X27 Fiskars, и Вы остались довольны качеством товара. Желаем Вам только приятных впечатлений от покупки.",
+    "state": "wbRu",
+    "lastUpdate": null,
+    "createDate": "2026-09-09T09:35:46Z",
+    "rejectReason": null,
+    "metadata": {
+     "editText": "",
+     "editRejectReason": 0
+    }
+   },
+   "video": null,
+   "votes": {
+    "pluses": 0,
+    "minuses": 0
+   },
+   "rank": 255.0,
+   "statusId": 16,
+   "bables": [
+    "качество",
+    "вес",
+    "удобно пользоваться"
+   ],
+   "reasons": {
+    "good": [
+     10066,
+     10087,
+     10089
+    ],
+    "bad": []
+   },
+   "excludedFromRating": {
+    "isExcluded": false,
+    "reasons": []
+   }
+  },
+  {
+   "id": "EdxxMoIZqQZkMXcFwCaM",
+   "globalUserId": "13",
+   "wbUserId": 13,
+   "wbUserDetails": {
+    "name": "Покупатель 13",
+    "country": "ru",
+    "hasPhoto": false
+   },
+   "nmId": 217083666,
+   "text": "Шикарный топорик",
+   "pros": "Рубит",
+   "cons": "",
+   "matchingSize": "",
+   "matchingPhoto": "",
+   "matchingDescription": "",
+   "productValuation": 5,
+   "color": "0.8 кг",
+   "size": "0",
+   "createdDate": "2026-09-01T14:08:49Z",
+   "updatedDate": "2026-09-01T14:10:42.963678088Z",
+   "answer": null,
+   "video": null,
+   "votes": {
+    "pluses": 0,
+    "minuses": 0
+   },
+   "rank": 254.0,
+   "statusId": 16,
+   "reasons": {
+    "good": [],
+    "bad": []
+   },
+   "excludedFromRating": {
+    "isExcluded": false,
+    "reasons": []
+   }
+  },
+  {
+   "id": "bgc2LRKV2jmubKMXpdkR",
+   "globalUserId": "14",
+   "wbUserId": 14,
+   "wbUserDetails": {
+    "name": "Покупатель 14",
+    "country": "ru",
+    "hasPhoto": false
+   },
+   "nmId": 217092700,
+   "text": "Давно пользуюсь лопатами fiskars. Вот приобрел топорик этого производителя. Пишу после использования в трехдневном походе. Топор действительно стоящий, очень эргономичный, удобный. Рубил  сухие поленья березы, сосны, дуба, и сырую сосну. Режущая кромка как была острой, так и осталась, без сколов и зазубрин. В общем топор - вещь!",
+   "pros": "",
+   "cons": "",
+   "matchingSize": "",
+   "matchingPhoto": "",
+   "matchingDescription": "",
+   "productValuation": 5,
+   "color": "1 кг",
+   "size": "0",
+   "createdDate": "2026-08-16T19:57:15Z",
+   "updatedDate": "2026-08-16T21:15:33.651778729Z",
+   "answer": null,
+   "photos": [
+    {
+     "id": 0,
+     "key": "5/d7dbf4a0-db5a-46b1-9f93-a6bb576a40ca",
+     "isBlurred": false,
+     "isReady": true
+    },
+    {
+     "id": 0,
+     "key": "3/891f83a9-175d-4d06-a4b9-1fb24486477e",
+     "isBlurred": false,
+     "isReady": true
+    },
+    {
+     "id": 0,
+     "key": "5/08a2bfb1-c9d4-46db-90e0-e8743a257ce6",
+     "isBlurred": false,
+     "isReady": true
+    }
+   ],
+   "video": null,
+   "votes": {
+    "pluses": 0,
+    "minuses": 0
+   },
+   "rank": 251.0,
+   "statusId": 16,
+   "bables": [
+    "качество",
+    "вес",
+    "удобно пользоваться"
+   ],
+   "reasons": {
+    "good": [
+     10066,
+     10087,
+     10089
+    ],
+    "bad": []
+   },
+   "excludedFromRating": {
+    "isExcluded": false,
+    "reasons": []
+   },
+   "tags": [
+    {
+     "id": 25,
+     "status": "plus"
+    },
+    {
+     "id": 8,
+     "status": "plus"
+    }
+   ]
+  },
+  {
+   "id": "6bzH1dE6RGDdjjKRiksF",
+   "globalUserId": "15",
+   "wbUserId": 15,
+   "wbUserDetails": {
+    "name": "Покупатель 15",
+    "country": "ru",
+    "hasPhoto": false
+   },
+   "nmId": 217144572,
+   "text": "Тапор проста супер советую не пожалеити",
+   "pros": "",
+   "cons": "",
+   "matchingSize": "",
+   "matchingPhoto": "",
+   "matchingDescription": "",
+   "productValuation": 5,
+   "color": "1.6 кг",
+   "size": "0",
+   "createdDate": "2026-09-07T06:58:07Z",
+   "updatedDate": "2026-09-09T09:35:39.072193408Z",
+   "answer": {
+    "text": "Здравствуйте. Благодарим Вас за заказ, за отзыв и за высокую оценку. Нам очень приятно, что Вам понравился топор X17 Fiskars, и Вы остались довольны качеством товара. Желаем Вам только приятных впечатлений от покупки.",
+    "state": "wbRu",
+    "lastUpdate": null,
+    "createDate": "2026-09-09T09:35:15Z",
+    "rejectReason": null,
+    "metadata": {
+     "editText": "",
+     "editRejectReason": 0
+    }
+   },
+   "video": null,
+   "votes": {
+    "pluses": 0,
+    "minuses": 0
+   },
+   "rank": 256.0,
+   "statusId": 16,
+   "reasons": {
+    "good": [],
+    "bad": []
+   },
+   "excludedFromRating": {
+    "isExcluded": false,
+    "reasons": []
+   }
+  },
+  {
+   "id": "dxSIda9p1hgBLRMd1jbK",
+   "globalUserId": "16",
+   "wbUserId": 16,
+   "wbUserDetails": {
+    "name": "Покупатель 16",
+    "country": "ru",
+    "hasPhoto": false
+   },
+   "nmId": 233682393,
+   "text": "Скорее всего оригинал. Оригинальнее только в Финляндии, судя по всему. \nСталь слабовата, зазубрины от сучковатой березы. В землю вообще втыкать нельзя - сразу режущую кромку срезает. \nНо лучше, чем советские колуны, по крайней мере наши пока не научились делать качественные легкие колуны.",
+   "pros": "",
+   "cons": "",
+   "matchingSize": "",
+   "matchingPhoto": "",
+   "matchingDescription": "",
+   "productValuation": 5,
+   "color": "",
+   "size": "0",
+   "createdDate": "2026-09-01T23:58:39Z",
+   "updatedDate": "2026-09-09T09:36:36.448227588Z",
+   "answer": {
+    "text": "Здравствуйте. Благодарим Вас за заказ, за отзыв и за высокую оценку. Нам очень приятно, что Вам понравился топор X27 Fiskars, и Вы остались довольны качеством товара. Желаем Вам только приятных впечатлений от покупки.",
+    "state": "wbRu",
+    "lastUpdate": null,
+    "createDate": "2026-09-09T09:35:46Z",
+    "rejectReason": null,
+    "metadata": {
+     "editText": "",
+     "editRejectReason": 0
+    }
+   },
+   "video": null,
+   "votes": {
+    "pluses": 0,
+    "minuses": 0
+   },
+   "rank": 255.0,
+   "statusId": 16,
+   "bables": [
+    "качество",
+    "вес",
+    "удобно пользоваться"
+   ],
+   "reasons": {
+    "good": [
+     10066,
+     10087,
+     10089
+    ],
+    "bad": []
+   },
+   "excludedFromRating": {
+    "isExcluded": false,
+    "reasons": []
+   }
+  }
+ ]
+}

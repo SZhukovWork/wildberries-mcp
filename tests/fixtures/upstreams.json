@@ -1,0 +1,375 @@
+{
+ "origin": {
+  "mediabasket_route_map": [
+   {
+    "method": "range",
+    "hosts": [
+     {
+      "vol_range_from": 0,
+      "vol_range_to": 143,
+      "host": "basket-01.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 144,
+      "vol_range_to": 287,
+      "host": "basket-02.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 288,
+      "vol_range_to": 431,
+      "host": "basket-03.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 432,
+      "vol_range_to": 719,
+      "host": "basket-04.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 720,
+      "vol_range_to": 1007,
+      "host": "basket-05.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 1008,
+      "vol_range_to": 1061,
+      "host": "basket-06.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 1062,
+      "vol_range_to": 1115,
+      "host": "basket-07.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 1116,
+      "vol_range_to": 1169,
+      "host": "basket-08.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 1170,
+      "vol_range_to": 1313,
+      "host": "basket-09.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 1314,
+      "vol_range_to": 1601,
+      "host": "basket-10.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 1602,
+      "vol_range_to": 1655,
+      "host": "basket-11.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 1656,
+      "vol_range_to": 1919,
+      "host": "basket-12.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 1920,
+      "vol_range_to": 2045,
+      "host": "basket-13.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 2046,
+      "vol_range_to": 2189,
+      "host": "basket-14.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 2190,
+      "vol_range_to": 2405,
+      "host": "basket-15.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 2406,
+      "vol_range_to": 2621,
+      "host": "basket-16.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 2622,
+      "vol_range_to": 2837,
+      "host": "basket-17.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 2838,
+      "vol_range_to": 3053,
+      "host": "basket-18.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 3054,
+      "vol_range_to": 3269,
+      "host": "basket-19.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 3270,
+      "vol_range_to": 3485,
+      "host": "basket-20.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 3486,
+      "vol_range_to": 3701,
+      "host": "basket-21.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 3702,
+      "vol_range_to": 3917,
+      "host": "basket-22.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 3918,
+      "vol_range_to": 4133,
+      "host": "basket-23.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 4134,
+      "vol_range_to": 4349,
+      "host": "basket-24.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 4350,
+      "vol_range_to": 4565,
+      "host": "basket-25.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 4566,
+      "vol_range_to": 4877,
+      "host": "basket-26.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 4878,
+      "vol_range_to": 5189,
+      "host": "basket-27.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 5190,
+      "vol_range_to": 5501,
+      "host": "basket-28.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 5502,
+      "vol_range_to": 5813,
+      "host": "basket-29.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 5814,
+      "vol_range_to": 6125,
+      "host": "basket-30.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 6126,
+      "vol_range_to": 6437,
+      "host": "basket-31.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 6438,
+      "vol_range_to": 6749,
+      "host": "basket-32.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 6750,
+      "vol_range_to": 7061,
+      "host": "basket-33.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 7062,
+      "vol_range_to": 7373,
+      "host": "basket-34.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 7374,
+      "vol_range_to": 7685,
+      "host": "basket-35.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 7686,
+      "vol_range_to": 7997,
+      "host": "basket-36.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 7998,
+      "vol_range_to": 8309,
+      "host": "basket-37.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 8310,
+      "vol_range_to": 8741,
+      "host": "basket-38.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 8742,
+      "vol_range_to": 9173,
+      "host": "basket-39.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 9174,
+      "vol_range_to": 9605,
+      "host": "basket-40.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 9606,
+      "vol_range_to": 10373,
+      "host": "basket-41.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 10374,
+      "vol_range_to": 11141,
+      "host": "basket-42.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 11142,
+      "vol_range_to": 11909,
+      "host": "basket-43.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 11910,
+      "vol_range_to": 12677,
+      "host": "basket-44.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 12678,
+      "vol_range_to": 13445,
+      "host": "basket-45.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 13446,
+      "vol_range_to": 14213,
+      "host": "basket-46.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 14214,
+      "vol_range_to": 14981,
+      "host": "basket-47.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 14982,
+      "vol_range_to": 15749,
+      "host": "basket-48.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 15750,
+      "vol_range_to": 16517,
+      "host": "basket-49.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 16518,
+      "vol_range_to": 17285,
+      "host": "basket-50.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 17286,
+      "vol_range_to": 18053,
+      "host": "basket-51.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 18054,
+      "vol_range_to": 18821,
+      "host": "basket-52.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 18822,
+      "vol_range_to": 19589,
+      "host": "basket-53.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 19590,
+      "vol_range_to": 20357,
+      "host": "basket-54.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 20358,
+      "vol_range_to": 21125,
+      "host": "basket-55.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 21126,
+      "vol_range_to": 21893,
+      "host": "basket-56.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 21894,
+      "vol_range_to": 22661,
+      "host": "basket-57.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 22662,
+      "vol_range_to": 23429,
+      "host": "basket-58.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 23430,
+      "vol_range_to": 24197,
+      "host": "basket-59.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 24198,
+      "vol_range_to": 24965,
+      "host": "basket-60.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 24966,
+      "vol_range_to": 25733,
+      "host": "basket-61.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 25734,
+      "vol_range_to": 26501,
+      "host": "basket-62.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 26502,
+      "vol_range_to": 27269,
+      "host": "basket-63.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 27270,
+      "vol_range_to": 28037,
+      "host": "basket-64.wbbasket.ru"
+     },
+     {
+      "vol_range_from": 28038,
+      "vol_range_to": 28805,
+      "host": "basket-65.wbbasket.ru"
+     }
+    ]
+   }
+  ]
+ },
+ "recommend": {
+  "mediabasket_route_map": [
+   {
+    "method": "mod",
+    "hosts": [
+     {
+      "host": "ekt-basket-cdn-09.geobasket.ru"
+     },
+     {
+      "host": "ekt-basket-cdn-10.geobasket.ru"
+     },
+     {
+      "host": "ekt-basket-cdn-11.geobasket.ru"
+     },
+     {
+      "host": "ekt-basket-cdn-12.geobasket.ru"
+     },
+     {
+      "host": "ekt-basket-cdn-13.geobasket.ru"
+     },
+     {
+      "host": "ekt-basket-cdn-14.geobasket.ru"
+     },
+     {
+      "host": "ekt-basket-cdn-15.geobasket.ru"
+     },
+     {
+      "host": "ekt-basket-cdn-16.geobasket.ru"
+     },
+     {
+      "host": "ekt-basket-cdn-17.geobasket.ru"
+     },
+     {
+      "host": "ekt-basket-cdn-08.geobasket.ru"
+     }
+    ]
+   }
+  ]
+ }
+}

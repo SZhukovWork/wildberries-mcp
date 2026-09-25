@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wildberries-mcp"
+version = "0.1.0"
+description = "MCP server for Wildberries: live prices, search with sorting and price filters, per-article ratings and reviews, price history"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+keywords = ["mcp", "wildberries", "marketplace", "price-comparison", "llm-tools"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Internet :: WWW/HTTP",
+]
+dependencies = [
+    "mcp>=2.2,<3",
+    "requests>=2.31",
+    "playwright>=1.49",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+wildberries-mcp = "wildberries_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/wildberries_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["live: hits the real Wildberries API (deselected unless -m live)"]
+addopts = "-m 'not live'"
