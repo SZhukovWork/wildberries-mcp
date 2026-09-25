@@ -38,10 +38,20 @@ Every response carries `fetched_at` and the delivery region it was computed for.
 | `get_reviews(article, limit, scope, sort, min_rating, max_rating)` | Date, stars, text, pros, cons, bought variant, buyer tags, seller reply; `scope=article` or the whole group; `sort=worst` surfaces complaints first |
 | `compare_products(articles)` | Up to 50 articles side by side in one request |
 
-## Install
+## Requirements
 
-Requires Python ≥ 3.10 and [uv](https://docs.astral.sh/uv/). On first use the
-server downloads Playwright's Chromium (~300 MB, once) for the anti-bot check.
+| | |
+|---|---|
+| Python | ≥ 3.10, with [uv](https://docs.astral.sh/uv/) (or pip) |
+| Browser | Chromium via Playwright, downloaded automatically on first run (≈300 MB download, ≈650 MB on disk in `~/.cache/ms-playwright`, shared by all Playwright tools). Needed to pass WB's anti-bot check: it runs for a few seconds when a token is issued, everything else is plain HTTP |
+| Docker | Not needed: Chromium runs as a child process of the server on the host |
+| System libraries | Already present on desktop Linux, macOS and Windows. On a minimal Debian/Ubuntu server install them once (root): `uvx --from playwright playwright install --with-deps chromium` |
+| Network | A Russian IP: WB blocks many foreign, VPN and datacenter addresses. Switch the VPN off or set `WB_PROXY` |
+| Memory | The browser takes ≈0.8 GB while it runs — ≈6 s when a token is issued (measured on a cold start), then it is closed |
+| Display | Only for the account login window (`wildberries-mcp login`); everything else runs headless |
+| Tested on | Linux (CachyOS; Playwright uses its Ubuntu build there). macOS and Windows are supported by Playwright but untested |
+
+## Install
 
 Claude Code:
 
