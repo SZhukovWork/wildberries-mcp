@@ -42,6 +42,7 @@ ROUTES_URL = "https://cdn.wbbasket.ru/api/v3/upstreams"
 FEEDBACK_HOST_URL = "https://feedback-bt.wildberries.ru/feedback/api/v2/host"
 FEEDBACK_FALLBACK_HOSTS = ("https://feedbacks1.wb.ru", "https://feedbacks2.wb.ru")
 SELLER_URL = "https://static-basket-01.wbbasket.ru/vol0/data/supplier-by-id/{}.json"
+CART_SYNC_URL = f"{SITE}/__internal/cart-storage-api/api/basket/sync"
 
 MOSCOW_DEST = -1257786
 ROUTES_TTL = 6 * 3600
@@ -67,6 +68,10 @@ class RateLimited(WildberriesError):
 
 class Blocked(WildberriesError):
     pass
+
+
+class Unauthorized(WildberriesError):
+    """The account token was rejected (HTTP 401)."""
 
 
 def cache_dir() -> Path:
@@ -113,6 +118,12 @@ class WildberriesClient:
             else:
                 self._dest = self._detect_region()
         return self._dest
+
+    def use_account_region(self, dest: int) -> None:
+        """In account mode the account's own delivery address wins over the
+        IP-based guess (an explicit WB_DEST still wins over both)."""
+        if not os.environ.get("WB_DEST"):
+            self._dest = (dest, "your Wildberries account's delivery address")
 
     def _detect_region(self) -> tuple[int, str]:
         try:
@@ -179,7 +190,11 @@ class WildberriesClient:
             time.sleep(wait)
 
     def _site_get(self, url: str, params: dict, expect: str) -> dict:
-        """GET a storefront API endpoint and return a validated JSON body."""
+        return self._site_request("GET", url, params, expect)
+
+    def _site_request(self, method: str, url: str, params: dict, expect: str,
+                      body: Any = None, headers: dict | None = None) -> dict:
+        """Call a storefront API endpoint and return a validated JSON body."""
         with self._lock:
             reminted = False
             anomalies = 0
@@ -189,7 +204,7 @@ class WildberriesClient:
                 session = self._site_session()
                 self._pace()
                 try:
-                    resp = session.get(url, params=params, timeout=25)
+                    resp = session.request(method, url, params=params, json=body, headers=headers, timeout=25)
                 except requests.RequestException as e:
                     raise WildberriesError(f"Network error talking to Wildberries: {e}") from e
                 finally:
@@ -208,6 +223,8 @@ class WildberriesClient:
                     self._mint()
                     reminted = True
                     continue
+                if resp.status_code == 401:
+                    raise Unauthorized("Wildberries rejected the account token (HTTP 401)")
                 if resp.status_code == 429:
                     throttles += 1
                     if throttles > 2:
@@ -279,6 +296,22 @@ class WildberriesClient:
             for p in data.get("products") or []:
                 found[p.get("id")] = p
         return found
+
+    # ---- account cart ------------------------------------------------------
+
+    def cart_sync(self, token: str, device_id: str, ts: int, ops: list[dict], full: bool = False) -> dict:
+        """The site's cart endpoint: apply `ops` and return changes since `ts`.
+
+        With `full` (the site's `remember_me=true`) and ts=0 it returns the
+        whole cart, which is how a freshly logged-in browser loads it.
+        """
+        params: dict[str, Any] = {"ts": ts, "device_id": device_id}
+        if full:
+            params["remember_me"] = "true"
+        return self._site_request(
+            "POST", CART_SYNC_URL, params, expect="state", body=ops,
+            headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+        )
 
     # ---- CDN ---------------------------------------------------------------
 

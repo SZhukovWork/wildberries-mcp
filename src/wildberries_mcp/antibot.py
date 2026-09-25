@@ -125,6 +125,26 @@ def _mint(proxy: str | None, headless: bool, timeout: float) -> BrowserSession:
     )
 
 
+def real_user_agent(pw) -> str:
+    """The installed Chromium's own User-Agent without the "Headless" marker.
+
+    WB binds its tokens to the User-Agent, so every browser context and every
+    HTTP request of this server presents the same, real one.
+    """
+    try:
+        browser = pw.chromium.launch(headless=True, channel="chromium")
+    except Exception as e:
+        if "Executable doesn't exist" in str(e):
+            _install_chromium()
+            browser = pw.chromium.launch(headless=True, channel="chromium")
+        else:
+            raise
+    try:
+        return browser.new_page().evaluate("navigator.userAgent").replace("HeadlessChrome", "Chrome")
+    finally:
+        browser.close()
+
+
 def _install_chromium() -> None:
     """First run under uvx has no browser yet: fetch Playwright's Chromium.
 

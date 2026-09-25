@@ -47,7 +47,7 @@ def test_live_card_offer():
 def test_card_details_sizes_have_stock():
     details = parse.card_details(card_v4(498414394))
     assert details["sizes"][0]["price_rub"] == 9187
-    assert details["sizes"][0]["in_stock_qty"] == 19
+    assert details["sizes"][0]["available"] is True
     assert details["colors"] == ["оранжевый"]
 
 

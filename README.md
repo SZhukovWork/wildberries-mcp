@@ -73,12 +73,55 @@ From a checkout: `uv venv && uv pip install -e . && .venv/bin/wildberries-mcp`.
 | `WB_MIN_INTERVAL` | `3.0` | Seconds between storefront API calls (search, cards). WB throttles hard; lower values get 429s |
 | `WB_CACHE_DIR` | `~/.cache/wildberries-mcp` | Where the anti-bot session is kept |
 | `WB_HEADLESS` | `1` | `0` shows the browser window while minting the token (debugging) |
+| `WB_ACCOUNT` | — | `1` enables the account mode (cart, wallet price) — see below |
+
+## Account mode (optional): cart and your WB Wallet price
+
+Off by default; enable it with `WB_ACCOUNT=1`. It adds:
+
+| Tool | What it does |
+|---|---|
+| `account_login()` | Opens a browser window on this computer; you sign in to Wildberries yourself |
+| `account_status()` | Whether an account is connected, until when, its delivery region and WB Wallet discount |
+| `account_logout()` | Deletes the local session and browser profile |
+| `get_cart()` | Your cart with live prices, sizes, stock, totals; sold-out and removed items are marked |
+| `add_to_cart(article, size, quantity)` | Puts an item into your real cart; `quantity` is the resulting amount (WB sets it, it does not add up) |
+| `remove_from_cart(article, size)` | Removes an item (or one size) from your cart |
+
+`get_product` and `compare_products` also get `price_with_wallet_rub`.
+
+**Logging in.** Run `wildberries-mcp login` in a terminal (or call `account_login`).
+A Chromium window opens on the WB login page; you type your phone number and the
+code into the site yourself — they never pass through the MCP client or the
+model. The server then copies only the access token, the device id, the delivery
+region and the wallet discount out of the browser profile. The token lasts about
+30 days and is renewed automatically from the saved profile.
+`wildberries-mcp status` / `wildberries-mcp logout` manage the session.
+
+**What is stored.** `~/.cache/wildberries-mcp/account.json` (permissions 0600) and
+the browser profile next to it. The token gives **full access to your account**;
+treat the directory like a password. `logout` deletes both locally; to end the
+session on WB's side too, use "log out on all devices" in your account.
+
+**What it does not do.** No ordering, payment or address changes — by design.
+Cart tools are marked as write operations, so MCP clients ask before running
+them, and the server instructions tell the agent to change the cart only when
+you ask. Every cart change is verified by re-reading the cart.
+
+**About "personal prices".** On the live site the base price for a logged-in
+buyer was the same as for an anonymous one; the personal difference is the
+WB Wallet discount (the account in testing had 3 %, an anonymous visitor about
+2 %). `price_with_wallet_rub` applies your discount — an estimate of what the
+site shows when paying with WB Wallet.
+
+Automated actions on a personal account can attract WB's anti-fraud checks; use
+the cart tools for occasional, user-requested changes.
 
 ## What the numbers mean
 
 - **Prices** are what an anonymous buyer sees in the reported region right now.
-  A signed-in buyer may see a lower personal price (WB Wallet — about 2 % —
-  and loyalty discounts).
+  With WB Wallet the site shows a few percent less; the account mode reports
+  your own wallet price.
 - **`delivery_eta_hours`** is WB's estimate for the region (the site turns the
   same numbers into a date).
 - **Ratings**: `rating`/`reviews` are per article, as shown on the product page.
@@ -98,15 +141,13 @@ From a checkout: `uv venv && uv pip install -e . && .venv/bin/wildberries-mcp`.
   or `WB_PROXY`.
 - Search is rate-limited by WB; the server spaces calls and reports a clear
   error instead of looping.
-- Read-only and anonymous: no account, cart or orders (see Roadmap).
+- Anonymous and read-only by default; the optional account mode can change the
+  cart but never orders or pays.
 
 ## Roadmap
 
-- **Later: optional account mode** (off by default). Log in once in a visible
-  browser window — phone number and SMS code never pass through the MCP client —
-  to get your personal prices and exact delivery dates for your pickup point.
-- **Later: cart** — `add_to_cart` / `get_cart` on top of the account mode.
-  Checkout, payment and address changes are deliberately out of scope.
+- Delivery date for your exact pickup point in cart and product answers.
+- Checkout, payment and address changes are deliberately out of scope.
 
 ## Development
 

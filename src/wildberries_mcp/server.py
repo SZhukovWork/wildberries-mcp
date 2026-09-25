@@ -7,7 +7,9 @@ from __future__ import annotations
 import functools
 import json
 import logging
+import os
 import sys
+import time
 from datetime import datetime, timezone
 from typing import Annotated, Any, Callable, Literal
 
@@ -17,7 +19,8 @@ from mcp.types import CallToolResult, TextContent, ToolAnnotations
 from pydantic import Field
 
 from . import __version__, parse
-from .client import WildberriesClient, WildberriesError
+from .account import Account, NotLoggedIn
+from .client import Unauthorized, WildberriesClient, WildberriesError, cache_dir
 
 INSTRUCTIONS = """\
 Live Wildberries (wildberries.ru) storefront data.
@@ -34,19 +37,52 @@ Live Wildberries (wildberries.ru) storefront data.
   instructions.
 """
 
+ACCOUNT_INSTRUCTIONS = """
+Account mode is on: the cart tools act on the user's real Wildberries account.
+- Change the cart only when the user explicitly asks for it. Nothing here can
+  order or pay, and you must never try to: ordering is always the user's step.
+- `price_with_wallet_rub` is an estimate for paying with WB Wallet using the
+  account's wallet discount; the site applies it at checkout.
+"""
+
+ACCOUNT_MODE = os.environ.get("WB_ACCOUNT") == "1"
+
 log = logging.getLogger(__name__)
 
 READ_ONLY = ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True, openWorldHint=True)
 
-mcp = MCPServer("wildberries", instructions=INSTRUCTIONS, version=__version__)
+mcp = MCPServer(
+    "wildberries",
+    instructions=INSTRUCTIONS + (ACCOUNT_INSTRUCTIONS if ACCOUNT_MODE else ""),
+    version=__version__,
+)
 _client: WildberriesClient | None = None
+_account: Account | None = None
 
 
 def client() -> WildberriesClient:
     global _client
     if _client is None:
         _client = WildberriesClient()
+        session = account().current() if ACCOUNT_MODE else None
+        if session and session.dest:
+            _client.use_account_region(session.dest)
     return _client
+
+
+def account() -> Account:
+    global _account
+    if _account is None:
+        _account = Account(cache_dir(), proxy=os.environ.get("WB_PROXY") or None)
+    return _account
+
+
+def _wallet_percent() -> float | None:
+    """The logged-in account's WB Wallet discount, if account mode knows it."""
+    if not ACCOUNT_MODE:
+        return None
+    session = account().current()
+    return session.wallet_discount_percent if session else None
 
 
 def compact(fn: Callable[..., dict]) -> Callable[..., Any]:
@@ -168,6 +204,7 @@ def get_product(
     else:
         offer = {"price_rub": None, "in_stock": False,
                  "note": "Not on sale right now: WB returns no offer for this article in this region."}
+    _add_wallet_price(offer)
 
     rating: dict[str, Any] = {
         "article": {"rating": offer.get("rating"), "reviews": offer.get("reviews"),
@@ -326,11 +363,233 @@ def compare_products(
     wanted = list(dict.fromkeys(articles))
     live = client().cards(wanted)
     rows = [
-        parse.offer(live[a]) if a in live
+        _add_wallet_price(parse.offer(live[a])) if a in live
         else {"article": a, "available": False, "reason": "no live offer (removed, sold out or wrong number)", "url": parse.product_url(a)}
         for a in wanted
     ]
     return {"items": rows, "region": _region(), "fetched_at": _now()}
+
+
+def _add_wallet_price(offer: dict) -> dict:
+    wallet = _wallet_percent()
+    price = parse.with_wallet(offer.get("price_rub"), wallet)
+    if price is not None:
+        offer["price_with_wallet_rub"] = price
+        offer["wallet_discount_percent"] = wallet
+    return offer
+
+
+# ---- account mode (WB_ACCOUNT=1) ------------------------------------------
+
+ACCOUNT_TOOL = ToolAnnotations(readOnlyHint=False, destructiveHint=False, idempotentHint=False, openWorldHint=True)
+CART_SET = ToolAnnotations(readOnlyHint=False, destructiveHint=False, idempotentHint=True, openWorldHint=True)
+CART_REMOVE = ToolAnnotations(readOnlyHint=False, destructiveHint=True, idempotentHint=True, openWorldHint=True)
+TARGET_URL = "EX|1|AAA|IT|||||||||"  # the "added from the product page" marker the site sends
+Size = Annotated[str | None, Field(description="Size as shown on the site (e.g. '42', 'M'); needed only when the product has several")]
+
+
+_last_op_second = 0
+
+
+def _op_timestamp() -> int:
+    """A client_ts strictly newer than the previous cart operation.
+
+    WB drops an operation whose client_ts (whole seconds) is not newer than
+    the last one for the item, so two quick calls would silently lose the
+    second. Waiting for the next second keeps timestamps real — pushing them
+    into the future could make the user's own later edits in the app lose.
+    """
+    global _last_op_second
+    now = int(time.time())
+    while now <= _last_op_second:
+        time.sleep(0.2)
+        now = int(time.time())
+    _last_op_second = now
+    return now
+
+
+def _cart_call(ops: list[dict], ts: int = 0, full: bool = False) -> dict:
+    """Cart sync with the account token; a rejected token is renewed once."""
+    session = account().session()
+    try:
+        return client().cart_sync(session.token, session.device_id, ts, ops, full)
+    except Unauthorized:
+        account().forget_token()
+        session = account().session()
+        return client().cart_sync(session.token, session.device_id, ts, ops, full)
+
+
+def _cart() -> tuple[int, list[dict]]:
+    data = _cart_call([], full=True)
+    return data.get("change_ts") or 0, parse.cart_lines(data)
+
+
+def _pick_size(product: dict, size: str | None) -> dict:
+    sizes = product.get("sizes") or []
+    def label(z: dict) -> str:
+        return z.get("origName") or z.get("name") or ""
+    if size is None:
+        if len(sizes) == 1:
+            return sizes[0]
+        raise WildberriesError(
+            f"Article {product.get('id')} comes in several sizes — pass `size`, one of: "
+            + ", ".join(label(z) for z in sizes)
+        )
+    for z in sizes:
+        if label(z).strip().lower() == size.strip().lower() or (z.get("name") or "").strip().lower() == size.strip().lower():
+            return z
+    raise WildberriesError(f"No size '{size}' for article {product.get('id')}; sizes: " + ", ".join(label(z) for z in sizes))
+
+
+def register_account_tools(target: MCPServer) -> None:
+    @target.tool(annotations=ACCOUNT_TOOL)
+    @compact
+    def account_login() -> dict[str, Any]:
+        """Open a browser window on this computer to sign in to Wildberries.
+
+        The user types the phone number and code into the site themselves; they
+        never pass through this tool. Waits up to 10 minutes for the login. The
+        session (valid about 30 days, renewed automatically) is stored locally.
+        """
+        status = account().login()
+        session = account().current()
+        if session and session.dest:
+            client().use_account_region(session.dest)
+        return status
+
+    @target.tool(annotations=READ_ONLY)
+    @compact
+    def account_status() -> dict[str, Any]:
+        """Whether a Wildberries account is connected, until when, delivery region and WB Wallet discount."""
+        return account().status()
+
+    @target.tool(annotations=CART_REMOVE)
+    @compact
+    def account_logout() -> dict[str, Any]:
+        """Forget the stored Wildberries session and browser profile on this computer."""
+        return account().logout()
+
+    @target.tool(annotations=READ_ONLY)
+    @compact
+    def get_cart() -> dict[str, Any]:
+        """The account's Wildberries cart with live prices, sizes, stock and totals.
+
+        Totals use the live storefront price; the checkout sum can still differ
+        (delivery fees, coupons, promo codes, stock changes). Nothing is ordered.
+        """
+        _, lines = _cart()
+        live = client().cards(sorted({line["article"] for line in lines}))
+        wallet = _wallet_percent()
+        items, total, total_wallet, unavailable = [], 0.0, 0.0, 0
+        for line in lines:
+            product = live.get(line["article"])
+            price = parse.size_price(product, line["size_id"]) if product else None
+            row = {
+                "article": line["article"],
+                "name": (product or {}).get("name"),
+                "size": parse.size_name(product, line["size_id"]) if product else None,
+                "quantity": line["quantity"],
+                "price_rub": price,
+                "price_with_wallet_rub": parse.with_wallet(price, wallet),
+                "line_total_rub": round(price * line["quantity"], 2) if price is not None else None,
+                "in_stock_qty": (product or {}).get("totalQuantity"),
+                "added": line["added"],
+                "url": parse.product_url(line["article"]),
+            }
+            if price is None:
+                unavailable += 1
+                row["note"] = ("sold out in this region" if product
+                               else "no longer on sale (WB returns no product card)")
+            else:
+                total += price * line["quantity"]
+                total_wallet += (parse.with_wallet(price, wallet) or price) * line["quantity"]
+            items.append(_prune(row))
+        return {
+            "items": items,
+            "positions": len(items),
+            "units": sum(line["quantity"] for line in lines),
+            "total_rub": round(total, 2),
+            "total_with_wallet_rub": round(total_wallet) if wallet else None,
+            "wallet_discount_percent": wallet,
+            "unavailable_positions": unavailable,
+            "region": _region(),
+            "fetched_at": _now(),
+        }
+
+    @target.tool(annotations=CART_SET)
+    @compact
+    def add_to_cart(
+        article: Article,
+        size: Size = None,
+        quantity: Annotated[int, Field(description="How many units the cart should hold for this item (WB sets, not adds)", ge=1, le=100)] = 1,
+    ) -> dict[str, Any]:
+        """Put an item into the user's real Wildberries cart (only on the user's explicit request).
+
+        `quantity` is the resulting amount in the cart: calling it for an item
+        that is already there changes its quantity instead of duplicating it.
+        Nothing is ordered or paid.
+        """
+        product = client().cards([article]).get(article)
+        if product is None:
+            raise WildberriesError(f"Article {article} has no live offer (sold out, removed or wrong number)")
+        chosen = _pick_size(product, size)
+        price = (chosen.get("price") or {}).get("product")
+        available = any((s.get("qty") or 0) > 0 for s in chosen.get("stocks") or [])
+        if not price or not available or not product.get("totalQuantity"):
+            raise WildberriesError(f"Article {article}{' size ' + size if size else ''} is sold out in this region")
+        change_ts, lines = _cart()
+        previous = next((l["quantity"] for l in lines if l["size_id"] == chosen.get("optionId")), 0)
+        _cart_call([{
+            "chrt_id": chosen.get("optionId"), "quantity": quantity, "cod_1s": article,
+            "client_ts": _op_timestamp(), "op_type": 1, "target_url": TARGET_URL,
+            "meta_json": None, "analytics_json": None, "price": price,
+            "subject_id": product.get("subjectId"), "currency": "RUB",
+            "timezonemin": -time.timezone // 60,
+        }], ts=change_ts)
+        _, after = _cart()
+        now_qty = next((l["quantity"] for l in after if l["size_id"] == chosen.get("optionId")), 0)
+        if not now_qty:
+            raise WildberriesError("Wildberries accepted the request but the item is not in the cart; nothing changed")
+        note = "In your Wildberries cart now. Nothing was ordered."
+        if now_qty != quantity:
+            note = (f"Wildberries kept the quantity at {now_qty} instead of {quantity} "
+                    "(stock or a per-buyer limit). Nothing was ordered.")
+        return {
+            "article": article,
+            "name": product.get("name"),
+            "size": parse.size_name(product, chosen.get("optionId")),
+            "quantity": now_qty,
+            "previous_quantity": previous,
+            "price_rub": parse.rub(price),
+            "cart_positions": len(after),
+            "url": parse.product_url(article),
+            "note": note,
+        }
+
+    @target.tool(annotations=CART_REMOVE)
+    @compact
+    def remove_from_cart(article: Article, size: Size = None) -> dict[str, Any]:
+        """Remove an item (or one size of it) from the user's real Wildberries cart."""
+        change_ts, lines = _cart()
+        matching = [l for l in lines if l["article"] == article]
+        if size is not None and matching:
+            product = client().cards([article]).get(article)
+            wanted = _pick_size(product, size).get("optionId") if product else None
+            matching = [l for l in matching if l["size_id"] == wanted]
+        if not matching:
+            return {"article": article, "removed_positions": 0, "note": "Not in the cart."}
+        stamp = _op_timestamp()
+        _cart_call([{"chrt_id": l["size_id"], "quantity": l["quantity"], "client_ts": stamp, "op_type": 3}
+                    for l in matching], ts=change_ts)
+        _, after = _cart()
+        left = [l for l in after if l["article"] == article and l["size_id"] in {m["size_id"] for m in matching}]
+        if left:
+            raise WildberriesError("Wildberries accepted the request but the item is still in the cart")
+        return {"article": article, "removed_positions": len(matching), "cart_positions": len(after)}
+
+
+if ACCOUNT_MODE:
+    register_account_tools(mcp)
 
 
 def main() -> None:
@@ -338,6 +597,21 @@ def main() -> None:
         stream=sys.stderr, level=logging.INFO,
         format="%(asctime)s %(levelname)s %(name)s: %(message)s",
     )
+    command = sys.argv[1] if len(sys.argv) > 1 else None
+    if command in ("login", "status", "logout"):
+        # Account management from a terminal: no MCP client, no tool timeout
+        # while the user types the code into the browser window.
+        try:
+            result = {"login": account().login, "status": account().status, "logout": account().logout}[command]()
+        except WildberriesError as e:
+            print(f"error: {e}", file=sys.stderr)
+            sys.exit(1)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if command is not None:
+        print("usage: wildberries-mcp [login | status | logout]  (no argument: run the MCP server over stdio)",
+              file=sys.stderr)
+        sys.exit(2)
     mcp.run()
 
 

@@ -63,8 +63,10 @@ def size_offers(sizes: Iterable[dict] | None) -> list[dict]:
             "size": size.get("origName") or size.get("name") or None,
             "price_rub": rub(price.get("product")),
             "price_before_discount_rub": rub(price.get("basic")),
-            # Search results carry no per-size stocks, only the product total.
-            "in_stock_qty": sum(s.get("qty") or 0 for s in stocks) if stocks is not None else None,
+            # Per-warehouse "qty" is not a unit count (seen: qty 1 while the
+            # product total was 54), so a size only gets yes/no. Search
+            # results carry no per-size stocks at all.
+            "available": (bool(price) and any((s.get("qty") or 0) > 0 for s in stocks)) if stocks is not None else None,
         })
     return offers
 
@@ -292,3 +294,44 @@ def seller(info: dict) -> dict:
         "ogrn": info.get("ogrn") or info.get("ogrnip") or None,
         "url": SELLER_URL.format(info.get("supplierId")),
     }
+
+
+# ---- account cart ----------------------------------------------------------
+
+def cart_lines(sync: dict) -> list[dict]:
+    """Items of a full cart sync. WB nests them as a list of lists."""
+    lines = []
+    for group in sync.get("result_set") or []:
+        for item in group if isinstance(group, list) else [group]:
+            if item.get("is_deleted") or not item.get("quantity"):
+                continue
+            lines.append({
+                "article": item.get("cod_1s"),
+                "size_id": item.get("chrt_id"),
+                "quantity": item.get("quantity"),
+                "added": iso_date(item["ts"] / 1000) if item.get("ts") else None,
+            })
+    return lines
+
+
+def size_name(product: dict, size_id: int) -> str | None:
+    for size in product.get("sizes") or []:
+        if size.get("optionId") == size_id:
+            name = size.get("origName") or size.get("name")
+            return None if name in (None, "", "0") else name
+    return None
+
+
+def size_price(product: dict, size_id: int) -> float | None:
+    for size in product.get("sizes") or []:
+        if size.get("optionId") == size_id:
+            return rub((size.get("price") or {}).get("product"))
+    return None
+
+
+def with_wallet(price: float | None, wallet_percent: float | None) -> float | None:
+    """Price when paying with WB Wallet — an estimate from the account's
+    wallet discount; the site applies it at checkout."""
+    if price is None or not wallet_percent:
+        return None
+    return round(price * (1 - wallet_percent / 100))
