@@ -1,12 +1,12 @@
 # wildberries-mcp
 
+**English** · [Русский](README.ru.md)
+
 An [MCP](https://modelcontextprotocol.io) server that gives LLM agents live,
 honestly-labelled data from [Wildberries](https://www.wildberries.ru), the
 largest Russian marketplace: search with real pages, sorting and price
 windows; live product cards; per-article ratings and reviews; weekly price
 history; seller legal details.
-
-**English** · [Русский](README.ru.md)
 
 > Buyer side: searches the public storefront, no Wildberries account or token
 > needed. Looking for your **seller cabinet** (orders, stocks, supplies via the
